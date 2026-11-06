@@ -1,6 +1,6 @@
-# FuzzyGamesWithFuzzyStrategies
+# Fuzzy Games with Fuzzy Strategies
 
-This project, "FuzzyGamesWithFuzzyStrategies," is designed to demonstrate fuzzy logic strategies in game theory. It includes components for managing game data, solving fuzzy minimax problems, and providing a web interface for viewing game results.
+This project, "Fuzzy Games with Fuzzy Strategies," is designed to demonstrate fuzzy logic strategies in game theory. It includes components for managing game data, solving fuzzy minimax problems, and providing a web interface for viewing game results.
 
 ### Project Structure
 
