@@ -1,4 +1,4 @@
-# Fuzzy Games with Fuzzy Strategies
+# Fuzzy Games with Fuzzy Strategies — Master's Thesis (2024)
 
 **Master's thesis (2024):** "Matrix Game with Fuzzy Sets of Player Strategies". Taras Shevchenko National University of Kyiv, Faculty of Computer Science and Cybernetics, Department of System Analysis and Decision Making Theory; specialty 124 System Analysis, program "Systems and Methods of Decision Making". Author: Denys Piven. Supervisor: Prof. Serhii Mashchenko, Dr. Sc. (Phys.-Math.). The thesis text (Ukrainian) is in [`thesis/`](thesis/Matrix_game_with_fuzzy_sets_of_player_strategies.pdf), its LaTeX source in [`tex/`](tex/main.tex).
 
