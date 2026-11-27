@@ -182,7 +182,7 @@
 \centerline{Київ – 2024}
 
 \section*{Реферат}
-Обсяг роботи 54 сторінки, 1 рисунок, 1 таблиця, 29 джерел посилань, 1 додаток. 
+Обсяг роботи 56 сторінок, 1 рисунок, 1 таблиця, 27 джерел посилань, 1 додаток. 
 
 НЕЧІТКА МАТРИЧНА ГРА, НЕЧІТКІ МНОЖИНИ, НЕЧІТКІ МНОЖИНИ ТИПУ-2.
 
@@ -319,7 +319,7 @@
 \begin{equation*}
 \mu_{A \cap B}(x)=\mu_A(x) \mu_B(x), \quad x \in X,
 \end{equation*}
-Майже всі відмінності між цими визначеннями проявляються у випадку нечітких множин $A$ та $B$, таких, що $B \subseteq A$, тобто $\mu_B(x) \subseteq \mu_A(x)$ для будь-якого $x \in X$. За першим з цих визначень
+Майже всі відмінності між цими визначеннями проявляються у випадку нечітких множин $A$ та $B$, таких, що $B \subseteq A$, тобто $\mu_B(x) \leq \mu_A(x)$ для будь-якого $x \in X$. За першим з цих визначень
 \begin{equation*}
 \mu_{A \cap B}(x)=\mu_B(x), \quad x \in X,
 \end{equation*}
@@ -407,7 +407,7 @@ A=\bigcup_\alpha \alpha A_\alpha,
 \subsubsection{Нечіткі множини типу-2}
 Нечіткі множини типу-2 (НМТ-2) є розширенням нечітких множин типу-1 (НМТ-1). НМТ-2, позначимо її через $\tilde{C}$, на чіткій множині $X$ характеризується нечіткою функцією належності $M_{\tilde{C}}: X \rightarrow[0,1]^{[0,1]}$. Для фіксованого $x^{\prime} \in X$ значення функції належності $M_{\tilde{C}}\left(x^{\prime}\right)$ називається нечітким ступенем належності. 
 
-Воно представляє НМТ-1 $M_{\tilde{C}}\left(x^{\prime}\right)=\left\{\left(u, \mu_{M_{\tilde{C}}\left(x^{\prime}\right)}(u)\right): u \in J_{x^{\prime}}\right\}$ на множині $J_{x^{\prime}} \subseteq[0,1]$ первинних ступенів належності $u$ до $\tilde{C}$ з відповідною функцією належності $\mu_{M_{\tilde{C}}\left(x^{\prime}\right)}(u), u \in J_{x^{\prime}}$. НМТ-2 $\tilde{C}$ у вигляді
+Воно представляє НМТ-1 $M_{\tilde{C}}\left(x^{\prime}\right)=\left\{\left(u, \mu_{M_{\tilde{C}}\left(x^{\prime}\right)}(u)\right): u \in U_{x^{\prime}}\right\}$ на множині $U_{x^{\prime}} \subseteq[0,1]$ первинних ступенів належності $u$ до $\tilde{C}$ з відповідною функцією належності $\mu_{M_{\tilde{C}}\left(x^{\prime}\right)}(u), u \in U_{x^{\prime}}$. НМТ-2 $\tilde{C}$ у вигляді
 \begin{equation*}
 \tilde{C}=\left\{\left(x, M_{\tilde{C}}(x)\right): x \in X\right\}=\left\{\left(x,\left\{\left(u, \mu_{M_{\tilde{C}}(x)}(u)\right): u \in U_{x}\right\}\right): x \in X\right\},
 \end{equation*}
@@ -516,7 +516,7 @@ a_{m 1} & \ldots & a_{m n}
 У цьому підрозділі представляється основна ідея найважливіших підходів для розв'язку матричних ігор з нечіткими виграшами. Матрична гра з нечіткими виграшами -- це скінчена гра з нульовою сумою для двох осіб із нечіткими виграшами. Її можна представити грою, подібною до звичайної матричної гри, з тією лише різницею, що матриця виграшів нечітка
 \begin{equation*}
 \begin{aligned}
-& G=\left(S^{n}, S^{m}, \tilde{A}\right), \\
+& G=\left(S^{m}, S^{n}, \tilde{A}\right), \\
 & \tilde{A}=\left(\tilde{a}_{i j}\right)_{\substack{1 \leqslant i \leqslant m \\
 1 \leqslant j \leqslant n}}=\left(\begin{array}{llll}
 \tilde{a}_{11} & \ldots & \tilde{a}_{1 n} \\
@@ -531,7 +531,7 @@ a_{m 1} & \ldots & a_{m n}
 \begin{equation*}
 \begin{aligned}
 & \operatorname{Max} v, \qquad \qquad \quad \text { Min } w , \\
-& \begin{array}{ll}p^{T} \tilde{A} \, \tilde{\geqslant} \, e w , & \tilde{A} q \,\tilde{\leqslant}\, e w \\e^{T} p=1, \quad  q \geqslant 0 , & e^{T} q=1, \quad q \geqslant 0 .\end{array}
+& \begin{array}{ll}p^{T} \tilde{A} \, \tilde{\geqslant} \, e v , & \tilde{A} q \,\tilde{\leqslant}\, e w \\e^{T} p=1, \quad  p \geqslant 0 , & e^{T} q=1, \quad q \geqslant 0 .\end{array}
 \end{aligned}
 \end{equation*}
 Тут і далі $e$ представляє вектор відповідної розмірності, компоненти якого є одиницями. Використовуючи метод Ягера для вираження подвійних нечітких обмежень у термінах адекватності $\tilde{t}$ та $\tilde{k}$, пара задач оптимізації нечіткості перетворюється на наступну пару задач лінійного програмування:
@@ -546,14 +546,14 @@ a_{m 1} & \ldots & a_{m n}
 \begin{equation*}
 \begin{aligned}
 \operatorname{Max} & \sum_{j=1}^{n} s_{j} , \\
-& \sum_{j=1}^{n}\left(a_{i j}^{L}+a_{i j}+a_{i j}^{U}\right) s_{j} \geqslant 3-\left(k_{i}^{L}+k_{i}+k_{i}^{U}\right)(1-\beta), \quad i=1, \ldots, m \\
+& \sum_{j=1}^{n}\left(a_{i j}^{L}+a_{i j}+a_{i j}^{U}\right) s_{j} \leqslant 3+\left(k_{i}^{L}+k_{i}+k_{i}^{U}\right)(1-\beta), \quad i=1, \ldots, m \\
 & \beta \in[0,1], \quad s_{j} \geqslant 0, \quad j=1, \ldots, n
 \end{aligned}
 \end{equation*}
 де $\tilde{a}_{i j}=\left(a_{i j}^{L}, a_{i j}, a_{i j}^{U}\right), \tilde{t}=\left(t_{j}^{L}, t_{j}, t_{j}^{U}\right)$ і $\tilde{k}=\left(k_{i}^{L}, k_{i}, k_{i}^{U}\right)$ є трикутними нечіткими числами (ТНЧ).
 \subsubsection{Багатоцільовий підхід: модель Лі}
 Лі використовував наступний порядок ранжування ТНЧ. 
-Нехай $\tilde{a}=\left(a^{L}, a, a^{U}\right)$ та $\tilde{b}=\left(b^{L}, a, b^{U}\right)$ -- два ТНЧ.
+Нехай $\tilde{a}=\left(a^{L}, a, a^{U}\right)$ та $\tilde{b}=\left(b^{L}, b, b^{U}\right)$ -- два ТНЧ.
 $
 \text{Тоді } \tilde{a} \,\tilde{\leqslant}\, \tilde{b} \text { якщо } a^{L} \leqslant b^{L}, a \leqslant b \text { та } a^{U}\leqslant b^{U}.
 $
@@ -630,7 +630,7 @@ x^{T} \tilde{A} y \preccurlyeq \tilde{q} \tilde{w},\\ x \in S^{m}, y \in S^{n}
 \begin{aligned}
 &\text{Max } V, \\
 &\text{} \begin{cases}
-\sum_{i=1}^{m} F\left(\tilde{a}_{i j}\right) x_{i} \geqslant V+(1-\gamma) F(\tilde{p}), & j=1,\dots,n, \\
+\sum_{i=1}^{m} F\left(\tilde{a}_{i j}\right) x_{i} \geqslant V-(1-\gamma) F(\tilde{p}), & j=1,\dots,n, \\
 \sum_{i=1}^{m} x_{i}=1, x \geqslant 0, 0 \leqslant \gamma \leqslant 1
 \end{cases}
 \end{aligned}
@@ -650,7 +650,7 @@ y \geqslant 0,
 
 \subsubsection{Модель Лю та Као}
 
-Лю та Као розробили метод розв'язання матричних ігор з нечіткими виграшами на основі принципу узагальнення. Розглянемо нечітку матричну гру. Тоді задача для Гравця I (Гравець~II) полягає знаходженні оптимального розв'язоку задачі. Використовуючи принцип узагальнення, Лю та Као визначають цінність гри як нечітке число $\tilde{Z}$ з такою функцією належності:
+Лю та Као~\cite{Lui} розробили метод розв'язання матричних ігор з нечіткими виграшами на основі принципу узагальнення. Розглянемо нечітку матричну гру. Тоді задача для Гравця I (Гравець~II) полягає знаходженні оптимального розв'язоку задачі. Використовуючи принцип узагальнення, Лю та Као визначають цінність гри як нечітке число $\tilde{Z}$ з такою функцією належності:
 \begin{equation*}
 \mu_{\tilde{Z}}(z)=\operatorname{Sup}_{a_{i j}} \operatorname{Min}\left\{\mu_{\tilde{a}_{i j}}\left(a_{i j}\right), \quad \forall i, j / z=Z(a)\right\} .
 \end{equation*}
@@ -705,12 +705,14 @@ y \geqslant 0,
 \mu_{\tilde{z}}(z)=\left\{\begin{array}{ll}
 L(z), & z_{\alpha=0}^{L} \leqslant z \leqslant z_{\alpha=1}^{L}, \\
 1, & z_{\alpha=1}^{L} \leqslant z \leqslant z_{\alpha=1}^{U}, \\
-R(z), & z_{\alpha=1}^{U} \leqslant z \leqslant z_{\alpha=0}^{L} .
+R(z), & z_{\alpha=1}^{U} \leqslant z \leqslant z_{\alpha=0}^{U} .
 \end{array} .\right.
 \end{equation*}
 У більшості випадків рівняння $R(z)=\left(Z_{\alpha}^{U}\right)^{-1}$ і $L(z)=\left(Z_{\alpha}^{L}\right)^{-1}$ неможливо знайти аналітично. Однак для різних рівнів можливостей $\alpha, \tilde{Z}_{\alpha}^{L}$ і $\tilde{Z}_{\alpha}^{U}$ можна обчислити для наближено для форм $R(z)$ і $L(z)$ відповідно.
 
 \section{МАТРИЧНА ГРА З НЕЧІТКИМИ МНОЖИНАМИ СТРАТЕГІЙ ГРАВЦІВ}
+Метод, викладений у цьому розділі, ґрунтується на підході~\cite{MashchenkoValue}, який тут розглянуто для випадку чіткої матриці виграшів.
+
 
 \subsection{Класична матрична гра}Матрична гра -- це двоосібна гра з скінченною кількістю стратегій та нульовою сумою виграшів. Вона може бути формально представлена у нормальній формі $\langle I, J, A(I, J)\rangle$, де $I=\{1, \ldots, |I|\}$ та $J=\{1, \ldots, |J|\}$ -- скінчені множини чистих стратегій гравців 1 та 2 відповідно; $A(I, J)=\left(a_{ij}\right)_{i \in I, j \in J}$ -- матриця виграшів, яка представляє виграші $a_{ij}$ гравця 1 в ситуації $(i, j)$, коли гравці 1 та 2 обирають стратегії $i \in I$ та $j \in J$ відповідно; |.| -- це потужність множини. Для зручності подальшого викладу множини $I$ та $J$ чистих стратегій зазначаються далі як параметри у матриці виграшів. Оскільки гра має нульову суму виграшів, гравець 2 в ситуації $(i, j)$ отримує виграш $-a_{ij}$. Значення $a_{ij}$ також зручно називати програшом гравця 2. В цьому випадку ми припускаємо, що гравець 1 максимізує свій виграш, тоді як гравець 2 мінімізує свій програш.
 
@@ -728,10 +730,10 @@ x A(I, J) \hat{y}^T \leq \hat{x} A(I, J) \hat{y}^T \leq \hat{x} A(I, J) y^T, x \
 та
 \begin{align}
 & Z(G(I, J))=\min w \\
-& \sum_{j \in J} a_{ij} y_j \leq w, i \in I ; \sum_{j in J} y_j=1 ;\\
-& y_j \geq 0, j \in J, u \in \Re .
+& \sum_{j \in J} a_{ij} y_j \leq w, i \in I ; \sum_{j \in J} y_j=1 ;\\
+& y_j \geq 0, j \in J, w \in \Re .
 \end{align}
-У цих задачах змінні $u$ та $v$ приймають значення обох знаків. Множина сідлових точок $(\hat{x}, \hat{y})$ не є порожньою. Значення матричної гри $G(I, J)$ у змішаних стратегіях має форму $Z(G(I, J))=\hat{x} A(I, J) \hat{y}^T$.
+У цих задачах змінні $v$ та $w$ приймають значення обох знаків. Множина сідлових точок $(\hat{x}, \hat{y})$ не є порожньою. Значення матричної гри $G(I, J)$ у змішаних стратегіях має форму $Z(G(I, J))=\hat{x} A(I, J) \hat{y}^T$.
 
 \subsection{Постановка задачі}
 Розглянемо матричну гру у нормальній формі $\langle M, N, A(M, N)\rangle$ з матрицею виграшу $A(M, N)=\left(A_{i j}\right)_{i \in M, j \in N}$, де $M=\{1, \ldots, m\}$ і $N= \{1, \ldots, n\}$ -- скінченні набори чистих стратегій гравців 1 і 2 відповідно. Нехай $\tilde{M}=\left\{\left(i, \mu_{\tilde{M}}(i)\right): i \in M\right\}$ та $\tilde{N}=\left\{\left(j, \mu_{\tilde{N}}(j)\right): j \in N\right\}$ є деякими нечіткими множинами (НМ), з ФН $\mu_{\tilde{M}}(i), i \in M$ та $\mu_{\tilde{N}}(j), j \in N$ на множинах $M$ та $N$ чистих стратегій гравців 1 і 2 відповідно. Назвемо $\tilde{M}$ та $\tilde{N}$ НМ стратегій. Припустимо, що НМ $\tilde{M}$ та $\tilde{N}$ є нормальними, тобто
@@ -744,7 +746,7 @@ x A(I, J) \hat{y}^T \leq \hat{x} A(I, J) \hat{y}^T \leq \hat{x} A(I, J) y^T, x \
 \subsection{Основна ідея}
 Спочатку узагальнимо задачу для випадку довільних підмножин $I \subseteq M, I \neq \emptyset$ та $J \subseteq N, J \neq \emptyset$ стратегій. У цьому випадку матриця виграшу $A(I, J)=\left(A_{i j}\right)_{i \in I, j \in J}$ є відповідною підматрицею матриці $A(M, N)=\left(A_{i j}\right)_{i \in M, j \in N}$.
 
-Для кожного фіксованого $z \in \Re$, розглянемо відображення $V^{z}: 2^{M \times N} \rightarrow\{0,1\}$, задане як
+Для кожного фіксованого $z \in \Re$, розглянемо відображення $V^{z}: 2^{M} \times 2^{N} \rightarrow\{0,1\}$, задане як
 \begin{equation}\label{formul}
 V^{z}(I, J) = 
 \begin{cases} 
@@ -770,8 +772,8 @@ Z(F(I, J))=\left\{\left(z, \mu_{Z(F(I, J))}(z)\right): z \in \Re\right\},
 \begin{array}{r}
 Z(F(I, J))=\max v \\
 \sum_{i \in M} p_{i j} \geq v, j \in J ; \sum_{i \in M} x_{i}=1 ; \\
-p_{i j} = Ax_{i}, i \in M, j \in N ; \\
-x_{i} \geq 0, i \in M ; v \in \Re ; p_{i j} \geq 0, i \in M, j \in N \\
+p_{i j} = a_{i j}x_{i}, i \in M, j \in N ; \\
+x_{i} \geq 0, i \in M ; v \in \Re \\
 x_{i}=0, i \notin I ;
 \end{array}
 \end{equation*}
@@ -779,9 +781,9 @@ x_{i}=0, i \notin I ;
 \begin{equation*}
 \begin{array}{r}
 Z(F(I, J))=\min w \\
-\sum_{j \in N} p_{i j} \leq w, i \in I ; \sum_{j \in N} y_{j}=1 ; \\
-q_{i j} = Ay_{j}, i \in M, j \in N ;\\
-y_{j} \geq 0, j \in N ; w \in \Re ; q_{i j} \geq 0, i \in M, j \in N \\
+\sum_{j \in N} q_{i j} \leq w, i \in I ; \sum_{j \in N} y_{j}=1 ; \\
+q_{i j} = a_{i j}y_{j}, i \in M, j \in N ;\\
+y_{j} \geq 0, j \in N ; w \in \Re \\
 y_{j}=0, j \notin J,
 \end{array}
 \end{equation*}
@@ -791,7 +793,7 @@ y_{j}=0, j \notin J,
 \begin{equation*}
 M_{W}\left(z^{*}\right)=V^{z^{*}}(\tilde{M}, \tilde{N}).
 \end{equation*}
-Образ пари НМ $\tilde{M}$ та $\tilde{N}$ при відображенні $V^{z^{*}}: 2^{M \times N} \rightarrow[0,1]$ є НМ
+Образ пари НМ $\tilde{M}$ та $\tilde{N}$ при відображенні $V^{z^{*}}: 2^{M} \times 2^{N} \rightarrow[0,1]$ є НМ
 \begin{equation*}
 V^{z^{*}}(\tilde{M}, \tilde{N})=\left\{\left(u, \mu_{V^{z^{*}}(\tilde{M}, \tilde{N})}\right): u \in[0,1]\right\}
 \end{equation*}
@@ -806,9 +808,9 @@ V^{z^{*}}\left(I_{\alpha}, J_{\beta}\right)=\mu_{Z\left(I_{\alpha}, J_{\beta}\ri
 є образом пари перерізів $I_{\alpha}$ та $J_{\beta}$ множин НМ стратегій при відображенні $V^{z^{*}}$. Значення $V^{z^{*}}\left(I_{\alpha}, J_{\beta}\right)$ дорівнює значенню ФН $\mu_{Z\left(I_{\alpha}, J_{\beta}\right)}\left(z^{*}\right)$
 для НМ $Z\left(I_{\alpha}, J_{\beta}\right)$ при $I=I_{\alpha}$ та $J=J_{\beta}$, $\alpha, \beta \in[0,1]$.
 
-\textbf{Зауваження 2.1.} Нехай $\Omega_{\tilde{M}}=\left\{\mu_{\tilde{M}}(i): i \in M\right\}$ та\\ $\Omega_{\tilde{N}}=\left\{\mu_{\tilde{N}}(j): j \in N\right\}$ є наборами значень ступенів належності НМ $\tilde{M}=\left\{\left(i, \mu_{\tilde{M}}(i)\right): i \in M\right\}$ та $\tilde{N}=\left\{\left(j, \mu_{\tilde{N}}(j)\right): j \in N\right\}$ стратегій, відповідно. Зауважимо, що потужності множин $\Omega_{\tilde{M}}$ та $\Omega_{\tilde{N}}$ є $\left|\Omega_{\tilde{M}}\right| \leq m$ та $\left|\Omega_{\tilde{N}}\right| \leq n$, відповідно. Ясно, що при отриманні $\alpha$-перерізів $I_{\alpha}, \alpha \in[0,1]$ НМ $\tilde{M}$ та $\beta$-перерізів $J_{\beta}, \beta \in[0,1]$ НМ $N$ ми можемо припустити, що $\alpha \in \Omega_{\tilde{M}}$ та $\beta \in \Omega_{\tilde{N}}$ замість $\alpha \in[0,1]$ та $\beta \in[0,1]$. Також зазначимо, що $1 \in \Omega_{\tilde{M}}$ та $1 \in \Omega_{\tilde{N}}$.
+\textbf{Зауваження 2.1.} Нехай $\Omega_{\tilde{M}}=\left\{\mu_{\tilde{M}}(i): i \in M\right\}$ та\\ $\Omega_{\tilde{N}}=\left\{\mu_{\tilde{N}}(j): j \in N\right\}$ є наборами значень ступенів належності НМ $\tilde{M}=\left\{\left(i, \mu_{\tilde{M}}(i)\right): i \in M\right\}$ та $\tilde{N}=\left\{\left(j, \mu_{\tilde{N}}(j)\right): j \in N\right\}$ стратегій, відповідно. Зауважимо, що потужності множин $\Omega_{\tilde{M}}$ та $\Omega_{\tilde{N}}$ є $\left|\Omega_{\tilde{M}}\right| \leq m$ та $\left|\Omega_{\tilde{N}}\right| \leq n$, відповідно. Ясно, що при отриманні $\alpha$-перерізів $I_{\alpha}, \alpha \in[0,1]$ НМ $\tilde{M}$ та $\beta$-перерізів $J_{\beta}, \beta \in[0,1]$ НМ $\tilde{N}$ ми можемо припустити, що $\alpha \in \Omega_{\tilde{M}}$ та $\beta \in \Omega_{\tilde{N}}$ замість $\alpha \in[0,1]$ та $\beta \in[0,1]$. Також зазначимо, що $1 \in \Omega_{\tilde{M}}$ та $1 \in \Omega_{\tilde{N}}$.
 
-Таким чином, за фіксованим $z=z^{*}$, значення ФН $M_{W}\left(z^{*}\right)$ формують НМ $\operatorname{НМ}\left\{\left(u, \mu_{M_{W}\left(z^{*}\right)}(u)\right): u \in\{0,1\}\right\}$ на $\{0,1\}$ для ФН
+Таким чином, за фіксованим $z=z^{*}$, значення ФН $M_{W}\left(z^{*}\right)$ формують НМ $\left\{\left(u, \mu_{M_{W}\left(z^{*}\right)}(u)\right): u \in\{0,1\}\right\}$ на $\{0,1\}$ для ФН
 \begin{equation*}
 \begin{array}{r}
 \mu_{M_{\tilde{W}}\left(z^{*}\right)}(u)=\max \left\{\min \{\alpha, \beta\}: \alpha \in \Omega_{\tilde{M}}, \beta \in \Omega_{\tilde{N}}, u=\mu_{Z\left(I_{\alpha}, J_{\beta}\right)}\left(z^{*}\right)\right\}, \\
@@ -861,7 +863,7 @@ $\Omega_{\tilde{M}}=\left\{\mu_{\tilde{M}}(i): i \in M\right\}$ та $\Omega_{\t
 
 \subsection{Ціна гри з нечіткими множинами стратегій гравців}
 \subsubsection{Декомпозиція нечіткої множини типу-2 значення гри}
-Теорема 2.1 обґрунтовує можливісь розбиття НМТ-2 значення гри з нечіткими множинами стратегій на сукупність вкладених НМТ-2 зі сталими вторинними оцінками (Визначення 2.1).
+Теорема 2.1 обґрунтовує можливісь розбиття НМТ-2 значення гри з нечіткими множинами стратегій на сукупність вкладених НМТ-2 зі сталими вторинними оцінками (Визначення 1.2).
 
 \textbf{Теорема 2.1.} НМТ-2 значення $\tilde{W}$ матричної гри $\langle\tilde{M}, \tilde{N}, A(M, N)\rangle$ для НМ стратегій розкладається за вторинними оцінками $\min \{\alpha, \beta\}$ на сукупність
 \begin{equation*}
@@ -949,24 +951,26 @@ W_{\gamma}^{e 1}=\bigcup_{\alpha \in \Omega_{\tilde{M}}, \beta \in \Omega_{\tild
 
 Доведення. Нехай $\alpha^{*} \in \Omega_{\tilde{M}}, \beta^{*} \in \Omega_{\tilde{N}}$ і $u=1$. Тоді, $u \in U_{z}$. Таким чином, 
 \begin{align*}
-    &\eta_{\tilde{W}}(z, u)=\max \{\min \{\alpha, \beta\}: \alpha \in \Omega_{\tilde{M}}, \beta \in \Omega_{\tilde{N}}\},\\
-    &u=1 \geq \min \{\alpha^{*}, \beta^{*}\}=\gamma^{*}.
+    &\eta_{\tilde{W}}(z, u)=\max \{\min \{\alpha, \beta\}: \alpha \in \Omega_{\tilde{M}}, \beta \in \Omega_{\tilde{N}}, u=\mu_{Z\left(F\left(I_{\alpha}, J_{\beta}\right)\right)}(z)\}\\
+    &\geq \min \{\alpha^{*}, \beta^{*}\}=\gamma^{*}.
 \end{align*}
 Згідно з Твердженням 2.1, гарантоване значення ступеня істинності $\gamma^{*} \in \Omega$ первинного ступеня належності $u$ числа $z \in \Re$ до НМТ-2 значення $\tilde{W}$ визначається рівнями $\alpha^{*} \in \Omega_{\tilde{M}}$ та $\beta^{*} \in \Omega_{\tilde{N}}$ (з $\gamma^{*}=\min \left\{\alpha^{*}, \beta^{*}\right\}$) перерізів НМ стратегій, за яких ступінь належності числа $z$ до $Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right)$ дорівнює $u$.
 
-\textbf{Твердження 2.2.} Припустимо, що НМТ-2 значення $\tilde{W}$ гри\\ $\langle\tilde{M}, N, A(M, N)\rangle$ для НМ $\tilde{M}$ стратегій гравця 1 і чіткого набору $N$ стратегій гравця 2 представлене формулами (2.33 - 2.35). Тоді для будь-яких $\gamma^{\prime}, \gamma^{\prime \prime} \in \Omega$ з $\gamma^{\prime} \geq \gamma^{\prime \prime}$ виконуються відношення $I_{\gamma^{\prime}} \subseteq I_{\gamma^{\prime \prime}}$ і $Z\left(F\left(I_{\gamma^{\prime \prime}}, N\right)\right) > Z\left(F\left(I_{\gamma^{\prime}}, N\right)\right)$.
+\textbf{Твердження 2.2.} Припустимо, що НМТ-2 значення $\tilde{W}$ гри\\ $\langle\tilde{M}, N, A(M, N)\rangle$ для НМ $\tilde{M}$ стратегій гравця 1 і чіткого набору $N$ стратегій гравця 2 представлене згідно з Теоремою 2.1. Тоді для будь-яких $\gamma^{\prime}, \gamma^{\prime \prime} \in \Omega$ з $\gamma^{\prime} \geq \gamma^{\prime \prime}$ виконуються відношення $I_{\gamma^{\prime}} \subseteq I_{\gamma^{\prime \prime}}$ і $Z\left(F\left(I_{\gamma^{\prime \prime}}, N\right)\right) \geq Z\left(F\left(I_{\gamma^{\prime}}, N\right)\right)$.
 
-Доведення. Оскільки множина $N$ стратегій гравця 2 є чіткою, приходимо до висновку що $\Omega_{N}=\{1\}, \Omega=\Omega_{\tilde{M}}$ і $J_{\beta}=N$ для всіх $\beta \in \Omega_{N}$. Для доведення Твердження 2.2, згідно з Визначенням 2.1 для $J_{\beta}=N$, потрібно перевірити $Z\left(F\left(I_{\gamma^{\prime \prime}}, N\right)\right) \geq Z\left(F\left(I_{\gamma^{\prime}}, N\right)\right)$ для всіх $u \in\{0,1\}$. Використовуємо відомий факт, що значення цільової функції задачі погіршується, тоді і лише тоді, коли додаються нові обмеження. Припустимо навпаки, що нерівність $Z\left(F\left(I_{\gamma^{\prime \prime}}, N\right)\right)<Z\left(F\left(I_{\gamma^{\prime}}, N\right)\right)$ виконуються. Тоді отримаємо, що $I_{\gamma^{\prime}} \supset I_{\gamma^{\prime \prime}}$, порівнюючи значення цільової функції задачі для $J=N$, $I=I_{\gamma^{\prime \prime}}$ та $I=I_{\gamma^{\prime}}$. Згідно з Зауваженням 2.2, $\gamma^{\prime}<\gamma^{\prime \prime}$, що є суперечністю.
+Доведення. Оскільки множина $N$ стратегій гравця 2 є чіткою, приходимо до висновку що $\Omega_{N}=\{1\}, \Omega=\Omega_{\tilde{M}}$ і $J_{\beta}=N$ для всіх $\beta \in \Omega_{N}$. Для доведення Твердження 2.2, згідно з Визначенням 2.1 для $J_{\beta}=N$, потрібно перевірити $Z\left(F\left(I_{\gamma^{\prime \prime}}, N\right)\right) \geq Z\left(F\left(I_{\gamma^{\prime}}, N\right)\right)$ для всіх $u \in\{0,1\}$. Використовуємо відомий факт, що значення цільової функції задачі не покращується, коли додаються нові обмеження. Припустимо навпаки, що нерівність $Z\left(F\left(I_{\gamma^{\prime \prime}}, N\right)\right)<Z\left(F\left(I_{\gamma^{\prime}}, N\right)\right)$ виконуються. Тоді отримаємо, що $I_{\gamma^{\prime}} \supset I_{\gamma^{\prime \prime}}$, порівнюючи значення цільової функції задачі для $J=N$, $I=I_{\gamma^{\prime \prime}}$ та $I=I_{\gamma^{\prime}}$. Згідно з Зауваженням 2.1, $\gamma^{\prime}<\gamma^{\prime \prime}$, що є суперечністю.
 
 Іншими словами, за Твердженням 2.2, якщо множина стратегій гравця 2 є чіткою, то більш переважні значення гри, які відповідають меншому рівню перерізів НМ стратегій гравця 1, мають менші вторинні оцінки належності (ступені істинності) до НМТ-2 значення $\tilde{W}$.
 
-\textbf{Твердження 2.3.} Припустимо, що НМТ-2 значення $\tilde{W}$ гри\\ $\langle M, \tilde{N}, A(M, N)\rangle$ для чіткого набору $M$ стратегій гравця 1 та НМ $\tilde{N}$ стратегій гравця 2 представлене формулами (2.33 - 2.35). Тоді для будь-яких $\gamma^{\prime}, \gamma^{\prime \prime} \in \Omega$ з $\gamma^{\prime} \geq \gamma^{\prime \prime}$ відношення $I_{\gamma^{\prime}} \subseteq I_{\gamma^{\prime \prime}}$ та $Z\left(F\left(I_{\gamma^{\prime}}, N\right)\right) > Z\left(F\left(I_{\gamma^{\prime \prime}}, N\right)\right)$ виконуються.
+\textbf{Твердження 2.3.} Припустимо, що НМТ-2 значення $\tilde{W}$ гри\\ $\langle M, \tilde{N}, A(M, N)\rangle$ для чіткого набору $M$ стратегій гравця 1 та НМ $\tilde{N}$ стратегій гравця 2 представлене згідно з Теоремою 2.1. Тоді для будь-яких $\gamma^{\prime}, \gamma^{\prime \prime} \in \Omega$ з $\gamma^{\prime} \geq \gamma^{\prime \prime}$ відношення $J_{\gamma^{\prime}} \subseteq J_{\gamma^{\prime \prime}}$ та $Z\left(F\left(M, J_{\gamma^{\prime}}\right)\right) \geq Z\left(F\left(M, J_{\gamma^{\prime \prime}}\right)\right)$ виконуються.
 
 Доведення Твердження 2.3 аналогічне доведенню Твердження 2.2.
 
 Згідно з Твердженням 2.3, якщо множина стратегій гравця 1 є чіткою, то більш переважні значення гри, які відповідають більшим рівням перерізів НМ стратегій гравця 2, мають більші вторинні оцінки належності (ступені істинності) до НМТ-2 значення $\tilde{W}$.
 
 Зауваження 2.3 полегшує розуміння того, як втрати гравця 2 пов'язані з виграшами гравця 1 у розглянутій грі.
+
+\textbf{Зауваження 2.3.} Оскільки гра має нульову суму, значення гри однакові для обох гравців. Тому виграші гравця 1 збігаються з програшами гравця 2.
 
 Застосування Тверджень 2.2 і 2.3 до обох гравців призводить до наступного висновку. Якщо гравець нечітко розуміє множину власних стратегій і інтерпретує множину стратегій партнера як чітку, то цей гравець схильний до песимістичних оцінок (з низькими ступенями істинності) значення гри. Інакше, якщо гравець розуміє множину власних стратегій як чітку і інтерпретує множину стратегій партнера як нечітку, то гравець схильний до оптимістичних оцінок (з високими ступенями істинності) значення гри.
 
@@ -998,7 +1002,7 @@ Z\left(F\left(M, J_{\beta^{*}}\right)\right)=Z\left(F\left(I_{\alpha^{*}}, N\rig
 
 2. Припустимо, що $Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right)$ є значенням матричної гри\\ $F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)=\left\langle I_{\alpha^{*}}, J_{\beta^{*}}, A\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right\rangle$ для чітких наборів стратегій $I_{\alpha^{*}}$ та $J_{\beta^{*}}$, які є відповідними перерізами НМ $\tilde{M}$ та $\tilde{N}$ стратегій гравців 1 і 2 відповідно. Тоді виконується рівність $Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right)=Z(F)$. У цьому випадку $Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right)$ є вкладеною множиною у значенні НМТ-2 $\tilde{W}$ гри $\langle\tilde{M}, \tilde{N}, A(M, N)\rangle$ з вторинною оцінкою (оцінкою істинності), що дорівнює $\gamma^{*}=\min \left\{\alpha^{*}, \beta^{*}\right\}$.
 
-Доведення частини 1) Твердження 2.4 безпосередньо випливає з Зауваження 2.3, де $\alpha^{*} = \min \left\{ \alpha^{*}: \alpha \in \Omega_{\tilde{M}} \right\}$ і $\beta^{*} = \min \left\{ \beta^{*}: \beta \in \Omega_{\tilde{N}} \right\}$, що забезпечує $I_{\alpha^{*}} = M$ і $J_{\beta^{*}} = N$. Для доведення частини 2), порівнюємо, які є значеннями ігор $F\left(M, J_{\beta^{*}}\right)$, $F\left(I_{\alpha^{*}}, N\right)$ та $F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)$. Оскільки значення цільової функції задачі не покращується при додаванні нових обмежень, то порівнюючи значення цільової функції задачі для пар $I=M$ і $J=J_{\beta^{*}}$, $I=I_{\alpha^{*}}$ і $J=J_{\beta^{*}}$, $I=I_{\alpha^{*}}$ і $J=N$, встановлюємо, що нерівності $Z\left(F\left(M, J_{\beta^{*}}\right)\right) \geq Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right) \geq Z\left(F\left(I_{\alpha^{*}}, N\right)\right)$ виконуються. Це призводить до $Z\left(F\left(M, J_{\beta^{*}}\right)\right) = Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right) = Z\left(F\left(I_{\alpha^{*}}, N\right)\right)$. Згідно з Наслідком 2.1, $Z\left(F\left(M, J_{\beta^{*}}\right)\right)$, $Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right)$ та \\$Z\left(F\left(I_{\alpha^{*}}, N\right)\right)$ є вкладеними множинами у НМТ-2 значенні гри $\tilde{W}$ з вторинними оцінками, що дорівнюють $\gamma^{*} = \min \left\{ \alpha^{*}, \beta^{*} \right\}$.
+Доведення частини 1) Твердження 2.4 безпосередньо випливає з Зауваження 2.3, де $\alpha^{*} = \min \left\{ \alpha: \alpha \in \Omega_{\tilde{M}} \right\}$ і $\beta^{*} = \min \left\{ \beta: \beta \in \Omega_{\tilde{N}} \right\}$, що забезпечує $I_{\alpha^{*}} = M$ і $J_{\beta^{*}} = N$. Для доведення частини 2), порівнюємо, які є значеннями ігор $F\left(M, J_{\beta^{*}}\right)$, $F\left(I_{\alpha^{*}}, N\right)$ та $F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)$. Оскільки значення цільової функції задачі не покращується при додаванні нових обмежень, то порівнюючи значення цільової функції задачі для пар $I=M$ і $J=J_{\beta^{*}}$, $I=I_{\alpha^{*}}$ і $J=J_{\beta^{*}}$, $I=I_{\alpha^{*}}$ і $J=N$, встановлюємо, що нерівності $Z\left(F\left(M, J_{\beta^{*}}\right)\right) \geq Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right) \geq Z\left(F\left(I_{\alpha^{*}}, N\right)\right)$ виконуються. Це призводить до $Z\left(F\left(M, J_{\beta^{*}}\right)\right) = Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right) = Z\left(F\left(I_{\alpha^{*}}, N\right)\right)$. Згідно з Наслідком 2.1, $Z\left(F\left(M, J_{\beta^{*}}\right)\right)$, $Z\left(F\left(I_{\alpha^{*}}, J_{\beta^{*}}\right)\right)$ та \\$Z\left(F\left(I_{\alpha^{*}}, N\right)\right)$ є вкладеними множинами у НМТ-2 значенні гри $\tilde{W}$ з вторинними оцінками, що дорівнюють $\gamma^{*} = \min \left\{ \alpha^{*}, \beta^{*} \right\}$.
 
 За Твердженням 2.4, консенсус існує. Щоб його обчислити, слід вибрати відповідні пари $Z\left(F\left(M, J_{\beta}\right)\right)$ та $Z\left(F\left(I_{\alpha}, N\right)\right)$ для $\alpha \in \Omega_{\tilde{M}}$ та $\beta \in \Omega_{\tilde{N}}$. Якщо консенсус не є єдиним, розумно вибрати один з консенсусів, який має найбільшу вторинну оцінку $\gamma = \min \{ \alpha, \beta\}$.
 
@@ -1026,52 +1030,52 @@ Z\left(F\left(M, J_{\beta^{*}}\right)\right)=Z\left(F\left(I_{\alpha^{*}}, N\rig
 
 Припустимо, що перший гравець аналізує антагоністичний конфлікт двох гравців. Він сприймає набори $M = \{1, 2, 3, 4\}$ і $N = \{1, 2, 3, 4\}$ стратегій гравців 1 і 2 у вигляді НМ $\tilde{M} = \{(1, 0.7), (2, 1), (3, 1), (4, 0.7)\}$ і $\tilde{N} = \{(1, 1), (2, 0.8), (3, 0.8), (4, 1)\}$ зі значеннями ФН $\mu_{\tilde{M}}(1) = \mu_{\tilde{M}}(4) = 0.7$, $\mu_{\tilde{M}}(2) = \mu_{\tilde{M}}(3) = 1$ і $\mu_{\tilde{N}}(1) = \mu_{\tilde{N}}(4) = 1$, $\mu_{\tilde{N}}(2) = \mu_{\tilde{N}}(3) = 0.8$ відповідно. ОПР має намір прогнозувати значення гри.
 
-Згідно з Зауваженням 2.2, набори ступенів належності НМ $\tilde{M}$ і $\tilde{N}$ стратегій задаються $\Omega_{\tilde{M}} = \{0.7, 1\}$ і $\Omega_{\tilde{N}} = \{0.8, 1\}$ відповідно. Розраховуємо НМТ-2 значення $W$ гри. Для кожної пари $\alpha \in \{0.7, 1\}$ і $\beta \in \{0.8, 1\}$, щоб обчислити $Z\left(F\left(I_{\alpha}, J_{\beta}\right)\right)$, яке є значенням матричної гри $F\left(I_{\alpha}, J_{\beta}\right)$. У цьому прикладі, значення матричних ігор $F\left(I_{\alpha}, J_{\beta}\right)$ для $\alpha \in \{0.7, 1\}$ і $\beta \in \{0.8, 1\}$:
+Згідно з Зауваженням 2.1, набори ступенів належності НМ $\tilde{M}$ і $\tilde{N}$ стратегій задаються $\Omega_{\tilde{M}} = \{0.7, 1\}$ і $\Omega_{\tilde{N}} = \{0.8, 1\}$ відповідно. Розраховуємо НМТ-2 значення $W$ гри. Для кожної пари $\alpha \in \{0.7, 1\}$ і $\beta \in \{0.8, 1\}$, щоб обчислити $Z\left(F\left(I_{\alpha}, J_{\beta}\right)\right)$, яке є значенням матричної гри $F\left(I_{\alpha}, J_{\beta}\right)$. У цьому прикладі, значення матричних ігор $F\left(I_{\alpha}, J_{\beta}\right)$ для $\alpha \in \{0.7, 1\}$ і $\beta \in \{0.8, 1\}$ (наближені значення округлено до сотих):
 \begin{align*}
-&Z\left(F\left(I_{0.7}, J_{0.8}\right)\right) = 10,\\
-&Z\left(F\left(I_{0.7}, J_{1}\right)\right) = 22,\\
-&Z\left(F\left(I_{1}, J_{0.8}\right)\right) = 10,\\
+&Z\left(F\left(I_{0.7}, J_{0.8}\right)\right) \approx 15.93,\\
+&Z\left(F\left(I_{0.7}, J_{1}\right)\right) = 24,\\
+&Z\left(F\left(I_{1}, J_{0.8}\right)\right) \approx 12.67,\\
 &Z\left(F\left(I_{1}, J_{1}\right)\right) = 18.
 \end{align*}
 
 Тоді, за Теоремою 2.1, НМТ-2 значення гри з НМ стратегій дорівнює
 \begin{align*}
-\tilde{W} = \{ & ((22, 1), 0.7), ((10, 1), 0.8), ((18, 1), 1),\\
+\tilde{W} = \{ & ((15.93, 1), 0.7), ((24, 1), 0.7), ((12.67, 1), 0.8), ((18, 1), 1),\\
 &((18, 0), 0.8), ((r, 0), 1) | r \neq 18\}.
 \end{align*}
 
-Отриману НМТ-2 можна інтерпретувати так: значення гри дорівнює: 18 з ступенем істинності, рівним 1 , 10 зі ступенем істинності, рівним 0.8, 22 зі ступенем істинності, рівним 0.7. Ціна гри не може дорівнювати 18 зі ступенем істинності 0.8, і будь яке число, що не дорівнює 10 та 22 не може бути ціною гри зі ступенем істинності 1.
+Отриману НМТ-2 можна інтерпретувати так: значення гри дорівнює: 18 з ступенем істинності, рівним 1, 12.67 зі ступенем істинності, рівним 0.8, 15.93 та 24 зі ступенем істинності, рівним 0.7. Ціна гри не може дорівнювати 18 зі ступенем істинності 0.8, і будь-яке число, що не дорівнює 18, не може бути ціною гри зі ступенем істинності 1.
 
 \textbf{Приклад 2.} Припустимо, що для обох гравців матриця виграшів гри представлена у формі наданій у Таблиці 1. Наприклад, ці дані можуть бути надані якоюсь компетентною організацією, якій обидва гравці довіряють. Ми маємо намір дослідити наступне.
 
 1. Розглянемо два варіанти прогнозування вартості цієї гри з точки зору гравця 1.
 
-A) Припустимо, що гравець 1 сприймає набір $M=\{1,2,3,4\}$ власних стратегій у формі НМ $\tilde{M}=\{(1,0.7), (2,1), (3,1), (4,0.7)\}$, а набір $N=\{1,2,3,4\}$ стратегій гравця 2 як чітку множину. Згідно з Зауваженням 2.3, множини значень ступенів належності НМ $\tilde{M}$ і чіткої множини $N$ стратегій задані як $\Omega_{\tilde{M}}=\{0.7,1\}$ та $\Omega_{N}=\{1\}$ відповідно. Ми обчислюємо НМТ-2 значення гри $\langle\tilde{M}, N, \tilde{A}(M, N)\rangle$ і позначаємо його як $\tilde{W}^{1}$. Для пар значень $\alpha=0.7$ та $\beta=1, \alpha=1$ та $\beta=1$, ми конструюємо пари $I_{0.7}=\{1,2,3,4\}$ та $J_{1}=\{1,2,3,4\}=N, I_{1}=\{2,3\}$ та $J_{1}=\{1,2,3,4\}=N$ нечіткої множини $\tilde{M}$ і чіткої множини $N$ стратегій відповідно.
+A) Припустимо, що гравець 1 сприймає набір $M=\{1,2,3,4\}$ власних стратегій у формі НМ $\tilde{M}=\{(1,0.7), (2,1), (3,1), (4,0.7)\}$, а набір $N=\{1,2,3,4\}$ стратегій гравця 2 як чітку множину. Згідно з Зауваженням 2.1, множини значень ступенів належності НМ $\tilde{M}$ і чіткої множини $N$ стратегій задані як $\Omega_{\tilde{M}}=\{0.7,1\}$ та $\Omega_{N}=\{1\}$ відповідно. Ми обчислюємо НМТ-2 значення гри $\langle\tilde{M}, N, \tilde{A}(M, N)\rangle$ і позначаємо його як $\tilde{W}^{1}$. Для пар значень $\alpha=0.7$ та $\beta=1, \alpha=1$ та $\beta=1$, ми конструюємо пари $I_{0.7}=\{1,2,3,4\}$ та $J_{1}=\{1,2,3,4\}=N, I_{1}=\{2,3\}$ та $J_{1}=\{1,2,3,4\}=N$ нечіткої множини $\tilde{M}$ і чіткої множини $N$ стратегій відповідно.
 \begin{align*}
-&Z\left(F\left(I_{0.7}, N\right)\right)=10,\\
-&Z\left(F\left(I_{1},N\right)\right)=10,
+&Z\left(F\left(I_{0.7}, N\right)\right)\approx 15.93,\\
+&Z\left(F\left(I_{1},N\right)\right)\approx 12.67,
 \end{align*}
 відповідно. Тоді, НМТ-2 значення гри з нечіткими множинами стратегій задане як 
 \begin{equation*}
-\tilde{W}^{1}=\{((10, 1), 1), (10, 0), 0), ((r, 0), 1) | r \neq 10\}.
+\tilde{W}^{1}=\{((15.93, 1), 0.7), ((12.67, 1), 1), ((12.67, 0), 0.7), ((r, 0), 1) | r \neq 12.67\}.
 \end{equation*}
-Гравець 1 може інтерпретувати отримане НМТ-2 так: значення гри дорівнює числу $10$ зі ступенем істинності 1. Бідь-яке інше число не може бути значенням гри зі ступенем істинності 1.
+Гравець 1 може інтерпретувати отримане НМТ-2 так: значення гри дорівнює числу $12.67$ зі ступенем істинності 1 та числу $15.93$ зі ступенем істинності 0.7. Ціна гри не може дорівнювати 12.67 зі ступенем істинності 0.7, і будь-яке число, що не дорівнює 12.67, не може бути значенням гри зі ступенем істинності 1.
 
-B) У цьому випадку, гравець 1 сприймає множину $M=\{1,2,3,4\}$ власних стратегій як чітку множину, а множину $N=\{1,2,3,4\}$ стратегій гравця 2 у формі нечіткої множини $\tilde{N}=\{(1,1), (2,0.8), (3,0.8), (4,1)\}$. Згідно з Зауваженням 2.3, множини значень ступенів належності чіткої множини $M$ і нечіткої множини $\tilde{N}$ стратегій задані як $\Omega_{M}=\{1\}$ і $\Omega_{\tilde{N}}=\{0.8,1\}$ відповідно. Ми обчислюємо НМТ-2 значення гри $\langle M, \tilde{N}, \tilde{A}(M, N)\rangle$ і позначаємо його як $\tilde{W}^{2}$. Для пар значень $\alpha=1$ і $\beta=0.8, \alpha=1$ і $\beta=1$, ми конструюємо пари $I_{1}=\{1,2,3,4\}=M$ і $J_{0.8}=\{1,2,3,4\}, I_{1}=\{1,2,3,4\}=M$ і $J_{1}=\{1,4\}$ чіткої множини $M$ і нечіткої множини $\tilde{N}$ стратегій відповідно.
+B) У цьому випадку, гравець 1 сприймає множину $M=\{1,2,3,4\}$ власних стратегій як чітку множину, а множину $N=\{1,2,3,4\}$ стратегій гравця 2 у формі нечіткої множини $\tilde{N}=\{(1,1), (2,0.8), (3,0.8), (4,1)\}$. Згідно з Зауваженням 2.1, множини значень ступенів належності чіткої множини $M$ і нечіткої множини $\tilde{N}$ стратегій задані як $\Omega_{M}=\{1\}$ і $\Omega_{\tilde{N}}=\{0.8,1\}$ відповідно. Ми обчислюємо НМТ-2 значення гри $\langle M, \tilde{N}, \tilde{A}(M, N)\rangle$ і позначаємо його як $\tilde{W}^{2}$. Для пар значень $\alpha=1$ і $\beta=0.8, \alpha=1$ і $\beta=1$, ми конструюємо пари $I_{1}=\{1,2,3,4\}=M$ і $J_{0.8}=\{1,2,3,4\}, I_{1}=\{1,2,3,4\}=M$ і $J_{1}=\{1,4\}$ чіткої множини $M$ і нечіткої множини $\tilde{N}$ стратегій відповідно.
 \begin{align*}
-&Z\left(F\left(M, J_{0.8}\right)\right)=10,\\
-&Z\left(F\left(M, J_{1}\right)\right)=22,
+&Z\left(F\left(M, J_{0.8}\right)\right)\approx 15.93,\\
+&Z\left(F\left(M, J_{1}\right)\right)=24,
 \end{align*}
 відповідно. Звідси, НМТ-2 значення гри з нечіткими множинами стратегій задано як 
 \begin{equation*}
-\tilde{W}^{2}=\{((10,1), 0.8),((22,1), 1), ((22, 0), 0.8), ((r, 0), 1) | r \neq 22 \}
+\tilde{W}^{2}=\{((15.93,1), 0.8),((24,1), 1), ((24, 0), 0.8), ((r, 0), 1) | r \neq 24 \}
 \end{equation*}
-Гравець 1 може інтерпретувати отримане НМТ-2 так: значення гри дорівнює числу $10$ зі ступенем істинності рівним 0.8, числу $22$ зі ступенем істинності рівним 1. Цiна гри не може дорiвнювати 22 зi
-ступенем iстиностi 0.8, і бідь-яке число, що не дорівнює 10 не може бути ціною гри зі ступенем істинності 1.
+Гравець 1 може інтерпретувати отримане НМТ-2 так: значення гри дорівнює числу $15.93$ зі ступенем істинності рівним 0.8, числу $24$ зі ступенем істинності рівним 1. Цiна гри не може дорiвнювати 24 зi
+ступенем iстиностi 0.8, і будь-яке число, що не дорівнює 24, не може бути ціною гри зі ступенем істинності 1.
 
 2. Схожі результати справджуються для двох варіантів прогнозування ціни гри з точки зору гравця 2.
 
-3. Тепер ми досліджуємо консенсус між гравцями у прогнозуванні ціни гри. Для цього ми порівнюємо варіанти A) і B) у пунктах 1 і 2, розглянутих вище з Зауваженням 2.3, враховуючи, що нумерація гравців може змінитися. Тоді, ми робимо висновок, що якщо кожен гравець сприймає власні стратегії у формі чіткої множини і бачить стратегії партнера у формі нечіткої множини, то число $10$ є консенсусом між ними зі ступенем істинності 0.7 для гравця 1 і ступенем істинності 0.8 для гравця 2. Ми зазначаємо, що ці ступені істинності не приймають максимальне значення (яке є 1). Також, порівнюючи число $10$ зі НМТ-2 значенням гри $\tilde{W}$ у Прикладі 1, ми робимо висновок, що $10=Z\left(F\left(I_{0.7}, J_{0.8}\right)\right)$. Таким чином, консенсус є числом зі ступенем істинності $\gamma^{*}=\min \{0.7,0.8\}=0.7$ у НМТ-2 значенні гри $\tilde{W}$ з нечіткими множинами стратегій з Прикладу 1.
+3. Тепер ми досліджуємо консенсус між гравцями у прогнозуванні ціни гри. Для цього ми порівнюємо варіанти A) і B) у пунктах 1 і 2, розглянутих вище з Зауваженням 2.3, враховуючи, що нумерація гравців може змінитися. Тоді, ми робимо висновок, що якщо кожен гравець сприймає власні стратегії у формі чіткої множини і бачить стратегії партнера у формі нечіткої множини, то число $15.93$ є консенсусом між ними зі ступенем істинності 0.8 для гравця 1 і ступенем істинності 0.7 для гравця 2. Ми зазначаємо, що ці ступені істинності не приймають максимальне значення (яке є 1). Також, порівнюючи число $15.93$ зі НМТ-2 значенням гри $\tilde{W}$ у Прикладі 1, ми робимо висновок, що $15.93\approx Z\left(F\left(I_{0.7}, J_{0.8}\right)\right)$. Таким чином, консенсус є числом зі ступенем істинності $\gamma^{*}=\min \{0.7,0.8\}=0.7$ у НМТ-2 значенні гри $\tilde{W}$ з нечіткими множинами стратегій з Прикладу 1.
 
 \clearpage
 \subsection{Програмна реалізація}
@@ -1142,13 +1146,13 @@ B) У цьому випадку, гравець 1 сприймає множин�
 
 \bibitem{Maeda} T. Maeda, On characterization of equilibrium strategy of two-person zero-sum game with fuzzy payoffs, Fuzzy Sets and Systems 139(2) (2003) 283–296.
 
+\bibitem{MashchenkoValue} S.O. Mashchenko, On a value of a matrix game with fuzzy sets of player strategies, manuscript submitted to Fuzzy Sets and Systems (FSS-D-23-00221), 2023.
+
 \bibitem{Mashchenko} S.O. Mashchenko, Sums of fuzzy set of summands, Fuzzy sets and systems 417 (2021) 140–151.
 
 \bibitem{Mendel} J. M. Mendel, R. I. John, Type-2 fuzzy sets made simple, IEEE Transactions on Fuzzy Systems 10 (2002) 117–127.
 
 \bibitem{Mizumoto} M. Mizumoto, K. Tanaka, Some properties of fuzzy sets of type-2, Information and Control 31(4) (1976) 312–340.
-
-\bibitem{N18} Shiang-Tai L., Chiang K.: Solution of Fuzzy Matrix Games: An Application of the Extension Principle
 
 \bibitem{Owen} Owen, G. (1974). Cooperative games using fuzzy sets. Theory and Decision, 4(4), 307-312.
 
@@ -1156,20 +1160,12 @@ B) У цьому випадку, гравець 1 сприймає множин�
 
 \bibitem{Ramik} J. Ramik, J. Rimanek, Inequality relation between fuzzy numbers and its use in fuzzy optimization, Fuzzy Sets and Systems 16 (1985) 123–150.
 
-\bibitem{Shapley} Shapley, L. S. (1953). A value for n-person games. Annals of Mathematics, 28(1), 307-317.
+\bibitem{Shapley} Shapley, L. S. (1953). A value for n-person games. In: Contributions to the Theory of Games II, Annals of Mathematics Studies 28, 307-317.
 
 \bibitem{Xu} L. Xu, R. Zhao, T. Shu, Three equilibrium strategies for two-person zero-sum games with fuzzy payoffs, in: L. Wang, Y. Jin (Eds.), Fuzzy Systems and Knowledge Discovery, Springer, Heidelberg, 2005, pp. 350–354.
 
 \bibitem{Zadeh} L. Zadeh, The concept of a linguistic variable and its application to approximate reasoning – I, Information Sciences 8 (1975) 199–249.
 
-\bibitem{Article1} C.~De~Persis, S.~Grammatico <<Continuous-time integral dynamics for aggregative game equilibrium seeking>> [Електронний ресурс]: arXiv preprint arXiv:1803.10448v1, 2018
-
-URL: \url{https://arxiv.org/pdf/1803.10448.pdf}
-
-\bibitem{Cite1} R.~Zhu, J.~Zhang, K.~You, and T.~Basar, <<Asynchronous networked
-aggregative games>> [Електронний ресурс]: arXiv preprint arXiv:2101.08973, 2021.
-
-URL: \url{https://arxiv.org/pdf/2101.08973.pdf}
 
 }
 \end{thebibliography}
@@ -1400,9 +1396,15 @@ public class DataService {
 package com.game.fuzzyGames.service;
 
 import com.game.fuzzyGames.model.GameData;
+import org.apache.commons.math3.optim.MaxIter;
+import org.apache.commons.math3.optim.PointValuePair;
+import org.apache.commons.math3.optim.linear.*;
+import org.apache.commons.math3.optim.nonlinear.scalar.GoalType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
@@ -1446,8 +1448,7 @@ public class SolverService {
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
         for (List<Double> row : gameData.getMatrix()) {
             for (Double value : row) {
-                result.append(decimalFormat.format(value))
-                .append("\t");
+                result.append(decimalFormat.format(value)).append("\t");
             }
             result.append("<br>");
         }
@@ -1497,29 +1498,66 @@ public class SolverService {
         // Append the solutions in the specified format
         result.append("<br>W = { ");
 
-        // Append each solution with its trust levels
+        // Type-2 membership function (Definition 2.1):
+        //   eta(z, 1) = max min{alpha, beta} over pairs whose game value equals z,
+        //   eta(z, 0) = max min{alpha, beta} over pairs whose game value differs from z.
+        Map<Double, Double> etaOne = new LinkedHashMap<>();
         for (SimpleEntry<Double, Double> pair : trustLevelPairs) {
-            double mTrust = pair.getKey();
-            double nTrust = pair.getValue();
-            double minTrust = Math.min(mTrust, nTrust);
-            double solution = solutions.get(pair);
-            String formattedSolution = String.valueOf(solution).replaceAll("\\.?0*$", "");
-
-            result.append("((").append(formattedSolution)
-                    .append(solution != 0.0 ? ", 1), " : ", 0), ")
-                    .append(minTrust).append("), ");
+            double minTrust = Math.min(pair.getKey(), pair.getValue());
+            etaOne.merge(solutions.get(pair), minTrust, Math::max);
         }
 
-        result.append("<br>((r, 0), 1.0) |");
-        for (SimpleEntry<Double, Double> pair : trustLevelPairs) {
-            double solution = solutions.get(pair);
-            String formattedSolution = String.valueOf(solution).replaceAll("\\.?0*$", "");
-            result.append(" r != ").append(formattedSolution).append(",");
+        for (Map.Entry<Double, Double> entry : etaOne.entrySet()) {
+            result.append("((").append(format(entry.getKey())).append(", 1), ")
+                    .append(entry.getValue()).append("), ");
         }
-        result.deleteCharAt(result.length() -- 1);
+
+        // Values of the game that are not equal to some z get u = 0
+        double etaOther = 0;
+        for (SimpleEntry<Double, Double> pair : trustLevelPairs) {
+            etaOther = Math.max(etaOther, Math.min(pair.getKey(), pair.getValue()));
+        }
+        for (Double z : etaOne.keySet()) {
+            double etaZero = 0;
+            for (SimpleEntry<Double, Double> pair : trustLevelPairs) {
+                if (!solutions.get(pair).equals(z)) {
+                    etaZero = Math.max(etaZero, Math.min(pair.getKey(), pair.getValue()));
+                }
+            }
+            if (etaZero > 0 && etaZero < etaOther) {
+                result.append("((").append(format(z)).append(", 0), ").append(etaZero).append("), ");
+            }
+        }
+
+        result.append("<br>((r, 0), ").append(etaOther).append(") |");
+        for (Double z : etaOne.keySet()) {
+            double etaZero = 0;
+            for (SimpleEntry<Double, Double> pair : trustLevelPairs) {
+                if (!solutions.get(pair).equals(z)) {
+                    etaZero = Math.max(etaZero, Math.min(pair.getKey(), pair.getValue()));
+                }
+            }
+            if (etaZero < etaOther) {
+                result.append(" r != ").append(format(z)).append(",");
+            }
+        }
+        result.deleteCharAt(result.length() - 1);
         result.append("}.");
 
+        // After building the result string, write it to a file
+        try (FileWriter writer = new FileWriter("src/main/resources/data/gameResult.txt")) {
+            // Replacing '<br>' with newline for plain text formatting
+            String resultText = result.toString().replace("<br>", "\n");
+            writer.write(resultText);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return result.toString();
+    }
+
+    private static String format(double value) {
+        return String.valueOf(value).replaceAll("\\.?0*$", "");
     }
 
     private double solveForPair(double mTrust, double nTrust, GameData gameData) {
@@ -1564,21 +1602,42 @@ public class SolverService {
     }
 
     private double minimaxSolution(List<List<Double>> matrix) {
-        double maxMinValue = Double.NEGATIVE_INFINITY;
+        // Value of the matrix game in mixed strategies (player 1 maximizes):
+        //   max v  s.t.  sum_i a_ij x_i >= v (for each column j),  sum_i x_i = 1,  x_i >= 0,  v free.
+        // Variables: x_1..x_m, v.
+        int m = matrix.size();
+        int n = matrix.get(0).size();
 
-        // Iterate through each row of the matrix
-        for (List<Double> row : matrix) {
-            // Find the minimum value in the current row
-            double minValueInRow = Collections.min(row);
+        double[] objective = new double[m + 1];
+        objective[m] = 1;
+        LinearObjectiveFunction f = new LinearObjectiveFunction(objective, 0);
 
-            // Find the maximum of the minimum values
-            if (minValueInRow > maxMinValue) {
-                maxMinValue = minValueInRow;
+        List<LinearConstraint> constraints = new ArrayList<>();
+        for (int j = 0; j < n; j++) {
+            double[] coefficients = new double[m + 1];
+            for (int i = 0; i < m; i++) {
+                coefficients[i] = matrix.get(i).get(j);
             }
+            coefficients[m] = -1;
+            constraints.add(new LinearConstraint(coefficients, Relationship.GEQ, 0));
         }
 
-        // Return the maximum of the minimum values, which is the optimal gain for the first player
-        return maxMinValue;
+        double[] sum = new double[m + 1];
+        Arrays.fill(sum, 0, m, 1);
+        constraints.add(new LinearConstraint(sum, Relationship.EQ, 1));
+
+        for (int i = 0; i < m; i++) {
+            double[] nonNegative = new double[m + 1];
+            nonNegative[i] = 1;
+            constraints.add(new LinearConstraint(nonNegative, Relationship.GEQ, 0));
+        }
+
+        PointValuePair solution = new SimplexSolver().optimize(
+                new MaxIter(1000), f, new LinearConstraintSet(constraints),
+                GoalType.MAXIMIZE, new NonNegativeConstraint(false));
+
+        // Round to 4 decimal places for readable output
+        return Math.round(solution.getValue() * 10000.0) / 10000.0;
     }
 }
 \end{lstlisting}
