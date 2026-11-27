@@ -2,7 +2,7 @@
 
 **Master's thesis (2024):** "Matrix Game with Fuzzy Sets of Player Strategies". Taras Shevchenko National University of Kyiv, Faculty of Computer Science and Cybernetics, Department of System Analysis and Decision Making Theory; specialty 124 System Analysis, program "Systems and Methods of Decision Making". Author: Denys Piven. Supervisor: Prof. Serhii Mashchenko, Dr. Sc. (Phys.-Math.). The thesis text (Ukrainian) is in [`thesis/`](thesis/Matrix_game_with_fuzzy_sets_of_player_strategies.pdf), its LaTeX source in [`tex/`](tex/main.tex). Continues the coursework [Fuzzy-Games-Coursework](https://github.com/DenysPiven/Fuzzy-Games-Coursework) (2023).
 
-This project, "Fuzzy Games with Fuzzy Strategies," is designed to demonstrate fuzzy logic strategies in game theory. It includes components for managing game data, solving fuzzy minimax problems, and providing a web interface for viewing game results.
+This project, "Fuzzy Games with Fuzzy Strategies," is designed to demonstrate fuzzy logic strategies in game theory. It includes components for managing game data, computing game values in mixed strategies, and providing a web interface for viewing game results.
 
 ### Project Structure
 
@@ -47,4 +47,4 @@ To use this project effectively, follow these steps:
 4. Run the application using Docker and Maven as described in the installation steps.
 5. Access the web interface at `http://localhost:8080` to view the game results.
 
-The application will create all possible pairs of fuzzy strategies based on the provided data. It will then solve the fuzzy minimax problem for each pair, find the results, and combine them into a summary.
+The application will create all possible pairs of fuzzy strategies based on the provided data. For each pair of cut levels it keeps the strategies at or above those levels, computes the value of the resulting matrix game in mixed strategies (linear programming, Apache Commons Math), and combines the values into the type-2 fuzzy set W of the game value.

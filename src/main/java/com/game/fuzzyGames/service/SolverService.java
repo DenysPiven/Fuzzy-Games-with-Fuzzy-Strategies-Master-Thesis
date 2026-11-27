@@ -1,6 +1,10 @@
 package com.game.fuzzyGames.service;
 
 import com.game.fuzzyGames.model.GameData;
+import org.apache.commons.math3.optim.MaxIter;
+import org.apache.commons.math3.optim.PointValuePair;
+import org.apache.commons.math3.optim.linear.*;
+import org.apache.commons.math3.optim.nonlinear.scalar.GoalType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -99,24 +103,48 @@ public class SolverService {
         // Append the solutions in the specified format
         result.append("<br>W = { ");
 
-        // Append each solution with its trust levels
+        // Type-2 membership function (Definition 2.1):
+        //   eta(z, 1) = max min{alpha, beta} over pairs whose game value equals z,
+        //   eta(z, 0) = max min{alpha, beta} over pairs whose game value differs from z.
+        Map<Double, Double> etaOne = new LinkedHashMap<>();
         for (SimpleEntry<Double, Double> pair : trustLevelPairs) {
-            double mTrust = pair.getKey();
-            double nTrust = pair.getValue();
-            double minTrust = Math.min(mTrust, nTrust);
-            double solution = solutions.get(pair);
-            String formattedSolution = String.valueOf(solution).replaceAll("\\.?0*$", "");
-
-            result.append("((").append(formattedSolution)
-                    .append(solution != 0.0 ? ", 1), " : ", 0), ")
-                    .append(minTrust).append("), ");
+            double minTrust = Math.min(pair.getKey(), pair.getValue());
+            etaOne.merge(solutions.get(pair), minTrust, Math::max);
         }
 
-        result.append("<br>((r, 0), 1.0) |");
+        for (Map.Entry<Double, Double> entry : etaOne.entrySet()) {
+            result.append("((").append(format(entry.getKey())).append(", 1), ")
+                    .append(entry.getValue()).append("), ");
+        }
+
+        // Values of the game that are not equal to some z get u = 0
+        double etaOther = 0;
         for (SimpleEntry<Double, Double> pair : trustLevelPairs) {
-            double solution = solutions.get(pair);
-            String formattedSolution = String.valueOf(solution).replaceAll("\\.?0*$", "");
-            result.append(" r != ").append(formattedSolution).append(",");
+            etaOther = Math.max(etaOther, Math.min(pair.getKey(), pair.getValue()));
+        }
+        for (Double z : etaOne.keySet()) {
+            double etaZero = 0;
+            for (SimpleEntry<Double, Double> pair : trustLevelPairs) {
+                if (!solutions.get(pair).equals(z)) {
+                    etaZero = Math.max(etaZero, Math.min(pair.getKey(), pair.getValue()));
+                }
+            }
+            if (etaZero > 0 && etaZero < etaOther) {
+                result.append("((").append(format(z)).append(", 0), ").append(etaZero).append("), ");
+            }
+        }
+
+        result.append("<br>((r, 0), ").append(etaOther).append(") |");
+        for (Double z : etaOne.keySet()) {
+            double etaZero = 0;
+            for (SimpleEntry<Double, Double> pair : trustLevelPairs) {
+                if (!solutions.get(pair).equals(z)) {
+                    etaZero = Math.max(etaZero, Math.min(pair.getKey(), pair.getValue()));
+                }
+            }
+            if (etaZero < etaOther) {
+                result.append(" r != ").append(format(z)).append(",");
+            }
         }
         result.deleteCharAt(result.length() - 1);
         result.append("}.");
@@ -131,6 +159,10 @@ public class SolverService {
         }
 
         return result.toString();
+    }
+
+    private static String format(double value) {
+        return String.valueOf(value).replaceAll("\\.?0*$", "");
     }
 
     private double solveForPair(double mTrust, double nTrust, GameData gameData) {
@@ -175,20 +207,41 @@ public class SolverService {
     }
 
     private double minimaxSolution(List<List<Double>> matrix) {
-        double maxMinValue = Double.NEGATIVE_INFINITY;
+        // Value of the matrix game in mixed strategies (player 1 maximizes):
+        //   max v  s.t.  sum_i a_ij x_i >= v (for each column j),  sum_i x_i = 1,  x_i >= 0,  v free.
+        // Variables: x_1..x_m, v.
+        int m = matrix.size();
+        int n = matrix.get(0).size();
 
-        // Iterate through each row of the matrix
-        for (List<Double> row : matrix) {
-            // Find the minimum value in the current row
-            double minValueInRow = Collections.min(row);
+        double[] objective = new double[m + 1];
+        objective[m] = 1;
+        LinearObjectiveFunction f = new LinearObjectiveFunction(objective, 0);
 
-            // Find the maximum of the minimum values
-            if (minValueInRow > maxMinValue) {
-                maxMinValue = minValueInRow;
+        List<LinearConstraint> constraints = new ArrayList<>();
+        for (int j = 0; j < n; j++) {
+            double[] coefficients = new double[m + 1];
+            for (int i = 0; i < m; i++) {
+                coefficients[i] = matrix.get(i).get(j);
             }
+            coefficients[m] = -1;
+            constraints.add(new LinearConstraint(coefficients, Relationship.GEQ, 0));
         }
 
-        // Return the maximum of the minimum values, which is the optimal gain for the first player
-        return maxMinValue;
+        double[] sum = new double[m + 1];
+        Arrays.fill(sum, 0, m, 1);
+        constraints.add(new LinearConstraint(sum, Relationship.EQ, 1));
+
+        for (int i = 0; i < m; i++) {
+            double[] nonNegative = new double[m + 1];
+            nonNegative[i] = 1;
+            constraints.add(new LinearConstraint(nonNegative, Relationship.GEQ, 0));
+        }
+
+        PointValuePair solution = new SimplexSolver().optimize(
+                new MaxIter(1000), f, new LinearConstraintSet(constraints),
+                GoalType.MAXIMIZE, new NonNegativeConstraint(false));
+
+        // Round to 4 decimal places for readable output
+        return Math.round(solution.getValue() * 10000.0) / 10000.0;
     }
 }
