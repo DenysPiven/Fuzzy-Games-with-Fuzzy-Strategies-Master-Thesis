@@ -6,24 +6,24 @@ This project, "Fuzzy Games with Fuzzy Strategies," is designed to demonstrate fu
 
 ### Project Structure
 
-- **src/fuzzyGames/controller/GameController.java**
-- **src/fuzzyGames/model/GameData.java**
-- **src/fuzzyGames/service/DataService.java**
-- **src/fuzzyGames/service/SolverService.java**
-- **src/fuzzyGames/FuzzyGamesApplication.java**
+- **src/main/java/com/game/fuzzyGames/controller/GameController.java**
+- **src/main/java/com/game/fuzzyGames/model/GameData.java**
+- **src/main/java/com/game/fuzzyGames/service/DataService.java**
+- **src/main/java/com/game/fuzzyGames/service/SolverService.java**
+- **src/main/java/com/game/fuzzyGames/FuzzyGamesApplication.java**
 
 ### Resources
 
-- **src/resources/data/gameData.json**
-- **src/resources/static/favicon.ico**
-- **src/resources/templates/index.html**
-- **src/resources/application.properties**
+- **src/main/resources/data/gameData.json**
+- **src/main/resources/data/gameResult.txt**
+- **src/main/resources/static/favicon.ico**
+- **src/main/resources/templates/index.html**
+- **src/main/resources/application.properties**
 
 ### Additional Files
 
 - **docker-compose.yaml**
 - **Dockerfile**
-- **HELP.md**
 - **mvnw, mvnw.cmd**
 - **pom.xml**
 - **README.md**
@@ -41,7 +41,7 @@ This project, "Fuzzy Games with Fuzzy Strategies," is designed to demonstrate fu
 
 To use this project effectively, follow these steps:
 
-1. Modify the game data in the `gameData.json` file located in `src/resources/data/`.
+1. Modify the game data in the `gameData.json` file located in `src/main/resources/data/`.
 2. Update the matrix values, M degrees, and N degrees according to your game scenario.
 3. Ensure that the matrix dimensions (M x N) match the number of degrees specified.
 4. Run the application using Docker and Maven as described in the installation steps.
